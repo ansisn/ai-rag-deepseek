@@ -4,7 +4,7 @@ server:
 spring:
   ai:
     ollama:
-      base-url: http://117.72.121.16:11434
+      base-url: http:/xxxx
       embedding:
         options:
           num-batch: 512
@@ -13,7 +13,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
-    url: jdbc:postgresql://117.72.121.16:15432/ai-rag-knowledge
+    url: jdbc:postgresql://xxxx/ai-rag-knowledge
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       pool-name: HikariCP
@@ -29,7 +29,7 @@ spring:
 redis:
   sdk:
     config:
-      host: 117.72.121.16
+      host:xxxx
       port: 16379
       pool-size: 10
       min-idle-size: 5
