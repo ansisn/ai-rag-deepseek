@@ -1,0 +1,45 @@
+server:
+  port: 8090
+
+spring:
+  ai:
+    ollama:
+      base-url: http://117.72.121.16:11434
+      embedding:
+        options:
+          num-batch: 512
+        model: nomic-embed-text
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://117.72.121.16:15432/ai-rag-knowledge
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: HikariCP
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+
+
+redis:
+  sdk:
+    config:
+      host: 117.72.121.16
+      port: 16379
+      pool-size: 10
+      min-idle-size: 5
+      idle-timeout: 30000
+      connect-timeout: 5000
+      retry-attempts: 3
+      retry-interval: 1000
+      ping-interval: 60000
+      keep-alive: true
+
+logging:
+  level:
+    root: info
